@@ -17,11 +17,13 @@ import { Character } from '@app/shared/interfaces/character.interface';
       </div>
       <div class="card-inner">
         <div class="header">
-          <a [routerLink]="['/character-details', character.id]">
-            <h2>{{ character.name | slice: 0:15}}</h2>
-          </a>
-          <h4 class="text-muted">{{ character.gender }}</h4>
-          <small class="text-muted">{{ character.created | date }}</small>
+          <h2>{{ character.name | slice: 0:15}}</h2>
+          <h4 class="text-muted">Gender: {{ character.gender }}</h4>
+          <small class="text-muted">Created on: {{ character.created | date }}</small>
+          <br>
+          <small class="text-muted">Status: {{ character.status }}</small>
+          <br>
+          <small class="text-muted">Specie: {{ character.species }}</small>
         </div>
       </div>
     </div>`,
@@ -30,5 +32,5 @@ import { Character } from '@app/shared/interfaces/character.interface';
 
 export class CharacterComponent {
     @Input()
-    character!: Character;
+    character: Character;
 }
